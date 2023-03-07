@@ -46,25 +46,21 @@ public class Stadium {
     }
 
 
+    public static Stadium getInstance() {
+        return defaultStadium;
+    }
 
-        public static Stadium getInstance() {
-            return defaultStadium;
-        }
-
-    public static void main(String ... Args){
+    public static void main(String... Args) {
 
         Stadium[] stadiums = new Stadium[4];
 
         stadiums[0] = new Stadium();
-        stadiums[1] = new Stadium( "Ukraine",788, 42, "dreamTeam", "notDreamTeam");
+        stadiums[1] = new Stadium("Ukraine", 788, 42, "dreamTeam", "notDreamTeam");
         stadiums[2] = getInstance();
         stadiums[3] = getInstance();
         System.out.println();
-        for (int i = 0; i < stadiums.length; i++){
+        for (int i = 0; i < stadiums.length; i++) {
             System.out.println(stadiums[i]);
         }
-
-
-
     }
 }
