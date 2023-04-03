@@ -2,6 +2,8 @@ package ua.lviv.iot.algo.part1.lab1;
 
 import lombok.*;
 
+import java.util.List;
+
 @Setter
 @Getter
 @NoArgsConstructor
@@ -19,8 +21,8 @@ public class SwimmingPool extends AbstractStadium {
     }
 
     @Override
-    public SUPPORTED_SPORTS getSupportedSports() {
-        String[] sports = {"swiming", "water polo"};
-        return SUPPORTED_SPORTS.swimming;
+    public List<SportTypes> getSupportedSports() {
+
+        return List.of(SportTypes.SWIMMING, SportTypes.WATER_POLO);
     }
 }

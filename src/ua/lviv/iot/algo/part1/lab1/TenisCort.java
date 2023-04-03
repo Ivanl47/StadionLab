@@ -1,6 +1,10 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.*;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+
+import java.util.List;
+
 @NoArgsConstructor
 @ToString(callSuper = true)
 public class TenisCort extends AbstractStadium {
@@ -12,7 +16,7 @@ public class TenisCort extends AbstractStadium {
     }
 
     @Override
-    public SUPPORTED_SPORTS getSupportedSports() {
-        return SUPPORTED_SPORTS.tenis;
+    public List<SportTypes> getSupportedSports() {
+        return List.of(SportTypes.TENNIS);
     }
 }

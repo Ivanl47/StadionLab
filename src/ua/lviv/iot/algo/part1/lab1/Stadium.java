@@ -47,8 +47,8 @@ public class Stadium extends AbstractStadium {
         }
     }
     @Override
-    public SUPPORTED_SPORTS getSupportedSports() {
-        return SUPPORTED_SPORTS.football;
+    public List<SportTypes> getSupportedSports() {
+        return List.of(SportTypes.FOOTBALL);
     }
 
     public void changeHomeTeam(String teamName) {
