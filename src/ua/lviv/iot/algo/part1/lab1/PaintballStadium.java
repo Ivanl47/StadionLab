@@ -12,7 +12,7 @@ public class PaintballStadium extends AbstractStadium {
     }
 
     @Override
-    public String[] getSupportedSports() {
-        return new String[0];
+    public SUPPORTED_SPORTS getSupportedSports() {
+        return SUPPORTED_SPORTS.paintball;
     }
 }

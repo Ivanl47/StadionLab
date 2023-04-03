@@ -9,11 +9,11 @@ import java.util.LinkedList;
 import java.util.List;
 import java.util.stream.Collectors;
 
-@ToString(callSuper = true)
+@ToString
 @Setter
 @Getter
 @NoArgsConstructor
-public class StadiumManager extends AbstractStadium {
+public class StadiumManager  {
     private final List<AbstractStadium> stadiums = new LinkedList<>();
 
     public void addStadium(final AbstractStadium stadium) {
@@ -30,10 +30,7 @@ public class StadiumManager extends AbstractStadium {
                 filter(stadium -> stadium.getCapacity() > capacity).
                 collect(Collectors.toList());
     }
-    @Override
-    public String[] getSupportedSports() {
-        return null;
-    }
+
 
     public static void main(String[] args) {
         StadiumManager manager = new StadiumManager();

@@ -12,5 +12,5 @@ public abstract class AbstractStadium {
     protected String name;
     protected int capacity;
     protected int currentAttandance;
-    public abstract String[] getSupportedSports();
+    public abstract SUPPORTED_SPORTS getSupportedSports();
 }

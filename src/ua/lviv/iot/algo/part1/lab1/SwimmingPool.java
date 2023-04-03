@@ -19,8 +19,8 @@ public class SwimmingPool extends AbstractStadium {
     }
 
     @Override
-    public String[] getSupportedSports() {
+    public SUPPORTED_SPORTS getSupportedSports() {
         String[] sports = {"swiming", "water polo"};
-        return sports;
+        return SUPPORTED_SPORTS.swimming;
     }
 }
