@@ -1,19 +1,17 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 import lombok.ToString;
+import java.util.List;
 
+
+@ToString(callSuper = true)
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
-@ToString
-public class Stadium {
-    private String name;
-
+public class Stadium extends AbstractStadium {
     private int capacity;
 
     private int currentAttadance;
@@ -21,8 +19,19 @@ public class Stadium {
     private String homeTeam;
 
     private String awayTeam;
+    private List<String> supportedSports;
 
-    private static Stadium defaultStadium = new Stadium();
+
+    public Stadium(int numberOfShowers, String name, int capacity, int currentAttandance,
+                   int capacity1, int currentAttadance, String homeTeam, String awayTeam,
+                   List<String> supportedSports) {
+        super(numberOfShowers, name, capacity, currentAttandance);
+        this.capacity = capacity1;
+        this.currentAttadance = currentAttadance;
+        this.homeTeam = homeTeam;
+        this.awayTeam = awayTeam;
+        this.supportedSports = supportedSports;
+    }
 
     public void addAttendies(int count) {
         this.currentAttadance += count;
@@ -37,6 +46,10 @@ public class Stadium {
             currentAttadance = 0;
         }
     }
+    @Override
+    public List<SportTypes> getSupportedSports() {
+        return List.of(SportTypes.FOOTBALL);
+    }
 
     public void changeHomeTeam(String teamName) {
         this.homeTeam = teamName;
@@ -47,20 +60,4 @@ public class Stadium {
     }
 
 
-    public static Stadium getInstance() {
-        return defaultStadium;
-    }
-
-    
-
-    public static void main(String... Args) {
-        Stadium[] stadiums = { new Stadium(),
-                new Stadium("Ukraine", 788, 42, "dreamTeam", "notDreamTeam"),
-                getInstance(),
-                getInstance()};
-        
-        for (Stadium i : stadiums) {
-            System.out.println(stadiums);
-        }
-    }
 }
