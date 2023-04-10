@@ -1,6 +1,7 @@
 package ua.lviv.iot.algo.part1.lab1;
 
 import lombok.ToString;
+import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
@@ -9,17 +10,14 @@ import static org.junit.jupiter.api.Assertions.*;
 @ToString
 
 class StadiumTest {
-
-    Stadium stadium = new Stadium(15,
-            "Ukraine", 400,
-            200, 400,
-            200, "a",
-            "b", List.of(SportTypes.FOOTBALL));
-    Stadium stadium2 = new Stadium(124,
-            "Arena Lviv", 2000,
-           1200, 2000,
-            1200, "d", "c",
-            List.of(SportTypes.FOOTBALL));
+    Stadium stadium;
+    Stadium stadium2;
+    @BeforeEach
+    void setUp()
+    {
+        stadium = new Stadium(15, "Ukraine", 400, 200, 400, 200, "a", "b", List.of(SportTypes.FOOTBALL));
+        stadium2 = new Stadium(124, "Arena Lviv", 2000, 1200, 2000, 1200, "d", "c", List.of(SportTypes.FOOTBALL));
+    }
 
     @Test
     void testAddAttendies() {
@@ -27,7 +25,7 @@ class StadiumTest {
         assertEquals(300, stadium.getCurrentAttadance());
 
         stadium2.addAttendies(30000);
-        assertEquals(stadium2.getCapacity(), stadium.getCurrentAttadance());
+        assertEquals(400, stadium.getCurrentAttadance());
     }
 
     @Test
