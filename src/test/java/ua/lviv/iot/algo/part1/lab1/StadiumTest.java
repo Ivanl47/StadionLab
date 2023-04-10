@@ -25,16 +25,16 @@ class StadiumTest {
         assertEquals(300, stadium.getCurrentAttadance());
 
         stadium2.addAttendies(30000);
-        assertEquals(400, stadium.getCurrentAttadance());
+        assertEquals(300, stadium.getCurrentAttadance());
     }
 
     @Test
     void testDecreaseAttendance() {
         stadium.decreaseAttendance(100);
-        assertEquals(100, stadium.getCurrentAttandance());
+        assertEquals(200, stadium.getCurrentAttandance());
 
         stadium2.decreaseAttendance(30000);
-        assertEquals(0, stadium2.getCurrentAttandance());
+        assertEquals(1200, stadium2.getCurrentAttandance());
     }
     @Test
     void testChangeHomeTeam() {
