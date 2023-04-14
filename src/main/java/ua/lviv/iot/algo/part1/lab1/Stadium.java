@@ -19,12 +19,12 @@ public class Stadium extends AbstractStadium {
     private String homeTeam;
 
     private String awayTeam;
-    private List<String> supportedSports;
+    private List<SportTypes> supportedSports;
 
 
     public Stadium(int numberOfShowers, String name, int capacity, int currentAttandance,
                    int capacity1, int currentAttadance, String homeTeam, String awayTeam,
-                   List<String> supportedSports) {
+                   List<SportTypes> supportedSports) {
         super(numberOfShowers, name, capacity, currentAttandance);
         this.capacity = capacity1;
         this.currentAttadance = currentAttadance;
@@ -40,12 +40,14 @@ public class Stadium extends AbstractStadium {
         }
     }
 
-    public void decreaseAttendance() {
+    public void decreaseAttendance(int count) {
         this.currentAttadance -= 100;
         if (currentAttadance < 0) {
             currentAttadance = 0;
         }
     }
+
+
     @Override
     public List<SportTypes> getSupportedSports() {
         return List.of(SportTypes.FOOTBALL);
