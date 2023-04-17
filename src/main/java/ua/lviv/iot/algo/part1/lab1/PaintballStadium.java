@@ -14,6 +14,13 @@ public class PaintballStadium extends AbstractStadium {
         super(numberOfShowers, name, capacity, currentAttandance);
         this.numberOfCovers = numberOfCovers;
     }
+    public String getHeaders() {
+        return super.getHeaders() + ", number oj covers";
+    }
+
+    public String toCSV() {
+        return super.toCSV() + ", " + numberOfCovers;
+    }
 
     @Override
     public List<SportTypes> getSupportedSports() {

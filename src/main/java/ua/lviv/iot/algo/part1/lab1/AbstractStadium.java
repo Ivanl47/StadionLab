@@ -14,5 +14,15 @@ public abstract class AbstractStadium {
     private String name;
     private int capacity;
     private int currentAttandance;
+
     public abstract List<SportTypes> getSupportedSports();
+
+    public String getHeaders() {
+        return "number of showers, name, capacity, current attandance";
+    }
+
+    public String toCSV() {
+        return numberOfShowers + ", " + name + ", " + capacity + ", "
+                + currentAttandance;
+    }
 }
