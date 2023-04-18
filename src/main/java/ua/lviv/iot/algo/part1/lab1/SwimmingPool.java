@@ -19,10 +19,11 @@ public class SwimmingPool extends AbstractStadium {
         this.poolVolumeInLiters = poolVolumeInLiters;
         this.numberOfMembers = numberOfMembers;
     }
+    @Override
     public String getHeaders() {
         return super.getHeaders() + ", pool volume in liters, number of members";
     }
-
+    @Override
     public String toCSV() {
         return super.toCSV() + ", " + poolVolumeInLiters + "," + numberOfMembers;
     }
