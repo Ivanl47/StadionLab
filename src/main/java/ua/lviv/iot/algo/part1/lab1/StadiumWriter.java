@@ -5,7 +5,7 @@ import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.List;
 public class StadiumWriter {
-    public String writeToFile(List<Stadium> stadiumList, String fileName) throws FileNotFoundException {
+    public String writeToFile(List<AbstractStadium> stadiumList, String fileName) throws FileNotFoundException {
         if (stadiumList.isEmpty()){
             return null;
         }
@@ -26,4 +26,5 @@ public class StadiumWriter {
         }
         return fileName;
     };
+
 };

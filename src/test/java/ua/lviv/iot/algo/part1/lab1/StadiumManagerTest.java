@@ -3,39 +3,33 @@ package ua.lviv.iot.algo.part1.lab1;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
-import java.util.List;
-
-import static org.junit.Assert.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertEquals;
 
 class StadiumManagerTest {
-    Stadium stadium;
-    Stadium stadium2;
     StadiumManager manager;
     @BeforeEach
-    void setUp(){
-        stadium = new Stadium(0 ,"A", 1000, 200, 1000, 200, "team a", "team b", List.of(SportTypes.FOOTBALL));
-        stadium2 = new Stadium(244 ,"B", 1200, 200, 1200, 200, "team c", "team d", List.of(SportTypes.FOOTBALL));
+    void setUp() {
+        System.out.println("Hello");
         StadiumManager manager = new StadiumManager();
+        manager.addStadium(new Stadium());
+        manager.addStadium(new PaintballStadium());
     }
 
     @Test
     void testAddStadium() {
-        manager.addStadium(stadium);
-        manager.addStadium(stadium2);
+        StadiumManager manager1 = new StadiumManager();
+        manager1.addStadium(new Stadium());
+        manager1.addStadium(new PaintballStadium());
         assertEquals(2, manager.getStadiums().size());
     }
 
     @Test
     public void testFindAllStadiumsWithShowers() {
-        manager.addStadium(stadium);
-        manager.addStadium(stadium2);
         assertEquals(1, manager.findAllStadiumsWithShowers().size());
     }
 
     @Test
-    void findAllStadiumsWithCapacityMoreThan() {
-        manager.addStadium(stadium);
-        manager.addStadium(stadium2);
+    public void findAllStadiumsWithCapacityMoreThan() {
         assertEquals(1, manager.findAllStadiumsWithCapacityMoreThan(1100).size());
     }
 }
