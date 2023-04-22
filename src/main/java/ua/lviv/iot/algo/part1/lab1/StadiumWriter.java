@@ -13,12 +13,12 @@ public class StadiumWriter {
         try (PrintWriter stadiumWriter= new PrintWriter(file)){
             AbstractStadium stadiumType = stadiumList.get(0);
             stadiumWriter.println(stadiumList.get(0).getHeaders());
-            for (var laptop : stadiumList) {
-                if (stadiumType.getClass() != laptop.getClass()) {
-                    stadiumType = laptop;
-                    stadiumWriter.println(laptop.getHeaders());
+            for (var stadium : stadiumList) {
+                if (stadiumType.getClass() != stadium.getClass()) {
+                    stadiumType = stadium;
+                    stadiumWriter.println(stadium.getHeaders());
                 }
-                stadiumWriter.println(laptop.toCSV());
+                stadiumWriter.println(stadium.toCSV());
             }
         }
         catch (Exception e) {
