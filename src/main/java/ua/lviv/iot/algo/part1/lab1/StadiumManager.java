@@ -1,7 +1,5 @@
 package ua.lviv.iot.algo.part1.lab1;
 
-import lombok.Getter;
-import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import java.util.LinkedList;
@@ -9,10 +7,15 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 @Setter
-@Getter
-@NoArgsConstructor
 public class StadiumManager  {
     private final List<AbstractStadium> stadiums = new LinkedList<>();
+
+    public StadiumManager() {
+    }
+
+    public List<AbstractStadium> getStadiums() {
+        return stadiums;
+    }
 
     public void addStadium(AbstractStadium stadium){
         this.stadiums.add(stadium);
@@ -29,5 +32,4 @@ public class StadiumManager  {
                 filter(stadium -> stadium.getCapacity() > capacity).
                 collect(Collectors.toList());
     }
-
 }

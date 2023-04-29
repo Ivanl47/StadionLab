@@ -20,6 +20,14 @@ public class Stadium extends AbstractStadium {
 
     private String awayTeam;
     private List<SportTypes> supportedSports;
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + ", home team, away team";
+    }
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ", " + homeTeam + ", " + awayTeam;
+    }
 
 
     public Stadium(int numberOfShowers, String name, int capacity, int currentAttandance,

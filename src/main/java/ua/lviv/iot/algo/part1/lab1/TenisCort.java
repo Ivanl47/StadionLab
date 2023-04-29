@@ -14,6 +14,14 @@ public class TenisCort extends AbstractStadium {
         super(numberOfShowers, name, capacity, currentAttandance);
         this.lengthOfNetInSantimeaters = lengthOfNet;
     }
+    @Override
+    public String getHeaders() {
+        return super.getHeaders() + ", length of net in santimeaters";
+    }
+    @Override
+    public String toCSV() {
+        return super.toCSV() + ", " + lengthOfNetInSantimeaters;
+    }
 
     @Override
     public List<SportTypes> getSupportedSports() {
